@@ -54,5 +54,10 @@ def plotProductOrders(product_id):
     plt.plot(xasks, yasks, 'g')
      
     plt.show()
-	
-plotProductOrders('BTC-EUR')
+
+publicClient = gdax.PublicClient()
+for i in range(5):
+	orders = publicClient.get_product_order_book('BTC-EUR', 2)
+	print orders
+		
+#plotProductOrders('BTC-EUR')
